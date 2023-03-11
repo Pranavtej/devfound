@@ -1,0 +1,40 @@
+[
+    {username: "Charan" ,
+    password: "Charan",
+    email: "charan_mcr@srkrec.edu.in",
+    name: "Charan Sai",
+    role : "dev",
+    avatar : "https://media.licdn.com/dms/image/D5603AQFqKI6kFXHUOQ/profile-displayphoto-shrink_100_100/0/1672579730463?e=1680134400&v=beta&t=x8Zzol6veGSvqECudhFSzkx8PaqY7DZ68pnSa1jAOog"
+  }
+  {username: "Praneeth" ,
+    password: "123456",
+    email: "praneeth_mcr@srkrec.edu.in",
+    name: "Praneeth",
+    role : "dev",
+    avatar : "https://media.licdn.com/dms/image/D5603AQFqKI6kFXHUOQ/profile-displayphoto-shrink_100_100/0/1672579730463?e=1680134400&v=beta&t=x8Zzol6veGSvqECudhFSzkx8PaqY7DZ68pnSa1jAOog"
+  }
+  
+  {username: "Manoj" ,
+    password: "123456",
+    email: "manoj_mcr@srkrec.edu.in",
+    name: "Manoj",
+    role : "dev",
+    avatar : "https://media.licdn.com/dms/image/D5603AQFqKI6kFXHUOQ/profile-displayphoto-shrink_100_100/0/1672579730463?e=1680134400&v=beta&t=x8Zzol6veGSvqECudhFSzkx8PaqY7DZ68pnSa1jAOog"
+  }
+  {username: "Lokesh" ,
+    password: "123456",
+    email: "lokesh_mcr@srkrec.edu.in",
+    name: "lokesh_b",
+    role : "dev",
+    avatar : "https://media.licdn.com/dms/image/D5603AQFqKI6kFXHUOQ/profile-displayphoto-shrink_100_100/0/1672579730463?e=1680134400&v=beta&t=x8Zzol6veGSvqECudhFSzkx8PaqY7DZ68pnSa1jAOog"
+  }
+  {username: "Satvik" ,
+    password: "123456",
+    email: "satvik_mcr@srkrec.edu.in",
+    name: "Satvik",
+    role : "dev",
+    avatar : "https://media.licdn.com/dms/image/D5603AQFqKI6kFXHUOQ/profile-displayphoto-shrink_100_100/0/1672579730463?e=1680134400&v=beta&t=x8Zzol6veGSvqECudhFSzkx8PaqY7DZ68pnSa1jAOog"
+  }
+  
+  
+],
