@@ -17,7 +17,7 @@ const SignIn = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.get(`/api/Login/${username}/${password}`);
+      const response = await axios.get(`https://devfound-backend.vercel.app/api/Login/${username}/${password}`);
 
       if (response.data.username === username && response.data.password === password) {
         // Log the user in
@@ -64,7 +64,7 @@ const SignIn = () => {
       
       
 
-      const Checkuser = await axios.get(`/api/users/find/${newUsername}`);
+      const Checkuser = await axios.get(`https://devfound-backend.vercel.app/api/users/find/${newUsername}`);
 
       if (Checkuser.status === 404) {
 
@@ -74,9 +74,9 @@ const SignIn = () => {
 
       else{
 
-            const response = await axios.post(`api/CreateAcc/${name}/${newpass}/${email}/${newUsername}`);
-            const Mailres= await axios.get(`api/CreateAcc/cnfrmAcc/mail/${name}/${email}`);
-            const Newres = await axios.get(`/api/Login/${newUsername}/${newpass}`);  
+            const response = await axios.post(`https://devfound-backend.vercel.app/api/CreateAcc/${name}/${newpass}/${email}/${newUsername}`);
+            const Mailres= await axios.get(`https://devfound-backend.vercel.app/api/CreateAcc/cnfrmAcc/mail/${name}/${email}`);
+            const Newres = await axios.get(`https://devfound-backend.vercel.app/api/Login/${newUsername}/${newpass}`);  
             if (Newres.data.username === newUsername && Newres.data.password === newpass) {
               console.log(Newres.data);
               console.log("success");

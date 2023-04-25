@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
   
     useEffect(() => {
       // make the API request when the component mounts
-      axios.get(`/api/devs/`)
+      axios.get(`https://devfound-backend.vercel.app/api/devs/`)
         .then(response => {
           setData(response.data); // save the response data to state
         })
