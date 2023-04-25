@@ -13,10 +13,15 @@ const {db,connectToDB} = require('./db.js');
 
 const DOMAIN = 'mail.devbydev.us';
 const mg = mailgun({apiKey:'20741efebcdab2ac967813dac08bae35-eb38c18d-178c6950', domain: DOMAIN});
-app.use(express.json());
 
 
-const uri = "mongodb+srv://devbydevs:ung84Ucl8lFLl9fh@cluster0.sl5qdqg.mongodb.net/?retryWrites=true&w=majority";
+
+// const uri = "mongodb+srv://devbydevs:ung84Ucl8lFLl9fh@cluster0.sl5qdqg.mongodb.net/?retryWrites=true&w=majority";
+
+app.get('/',async (req, res) => {
+  res.send('devfound:');
+});
+
 app.get('/users/:name',async (req, res) => {
 
   const details = await db.collection('users').findOne({name: req.params.name});
