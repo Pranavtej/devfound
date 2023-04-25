@@ -12,8 +12,8 @@ let db;
 
 
 async function connectToDB(cb) {
-  const USER = process.env.DB_USER;
-  const PASS = process.env.DB_PASS;
+  const USER = "devbydevs";
+  const PASS = "ung84Ucl8lFLl9fh";
   
     const uri = `mongodb+srv://${USER}:${PASS}@cluster0.sl5qdqg.mongodb.net/?retryWrites=true&w=majority`;
     
@@ -29,7 +29,7 @@ async function connectToDB(cb) {
 // const { MongoClient,  } = require('mongodb');
 
 const DOMAIN = 'mail.devbydev.us';
-const API_MAIL = process.env.API_MAIL;
+const API_MAIL ='20741efebcdab2ac967813dac08bae35-eb38c18d-178c6950';
 const mg = mailgun({apiKey: API_MAIL, domain: DOMAIN});
 
 //'20741efebcdab2ac967813dac08bae35-eb38c18d-178c6950'
