@@ -1,10 +1,10 @@
-
 const express = require('express');
 const mailgun= require('mailgun-js')
 const cors = require('cors');
 const app = express();
 app.use(express.json());
-app.use(cors())
+app.use(cors());
+
 
 // import {db, connectToDB } from './db.js';
 const {db,connectToDB} = require('./db.js');
@@ -12,9 +12,10 @@ const {db,connectToDB} = require('./db.js');
 // const { MongoClient,  } = require('mongodb');
 
 const DOMAIN = 'mail.devbydev.us';
-const mg = mailgun({apiKey:'20741efebcdab2ac967813dac08bae35-eb38c18d-178c6950', domain: DOMAIN});
+const API_MAIL = process.env.API_MAIL;
+const mg = mailgun({apiKey: API_MAIL, domain: DOMAIN});
 
-
+//'20741efebcdab2ac967813dac08bae35-eb38c18d-178c6950'
 
 // const uri = "mongodb+srv://devbydevs:ung84Ucl8lFLl9fh@cluster0.sl5qdqg.mongodb.net/?retryWrites=true&w=majority";
 
