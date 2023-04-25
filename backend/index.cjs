@@ -1,3 +1,5 @@
+import { MONGO_CLIENT_EVENTS } from 'mongodb';
+
 const express = require('express');
 const mailgun= require('mailgun-js')
 const cors = require('cors');
@@ -15,7 +17,7 @@ async function connectToDB(cb) {
   const PASS = process.env.DB_PASS;
   console.log(`Name is ${USER}`);
   console.log(`Name is ${PASS}`)
-  const uri = `mongodb+srv://${USER}:${PASS}@cluster0.sl5qdqg.mongodb.net/?retryWrites=true&w=majority`;
+  const uri = process.env.MONGO_URL;
     console.log(uri)
   const client = new MongoClient(uri);
   await client.connect();
