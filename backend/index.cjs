@@ -2,6 +2,7 @@ const express = require('express');
 const mailgun= require('mailgun-js')
 const cors = require('cors');
 const app = express();
+const env = require('dotenv').config();
 app.use(express.json());
 app.use(cors());
 
