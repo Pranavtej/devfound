@@ -12,9 +12,10 @@ let db;
 async function connectToDB(cb) {
   const USER = process.env.DB_USER;
   const PASS = process.env.DB_PASS;
-  
+  console.log(`Name is ${USER}`);
+  console.log(`Name is ${PASS}`)
   const uri = `mongodb+srv://${USER}:${PASS}@cluster0.sl5qdqg.mongodb.net/?retryWrites=true&w=majority`;
-    
+    console.log(uri)
   const client = new MongoClient(uri);
   await client.connect();
 
