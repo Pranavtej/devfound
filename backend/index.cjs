@@ -4,37 +4,28 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cors());
- //rewrite with es6
- 
+
 const MongoClient = require('mongodb').MongoClient;
 
 let db;
-
 
 async function connectToDB(cb) {
   const USER = process.env.DB_USER;
   const PASS = process.env.DB_PASS;
   
-    const uri = `mongodb+srv://${USER}:${PASS}@cluster0.sl5qdqg.mongodb.net/?retryWrites=true&w=majority`;
+  const uri = `mongodb+srv://${USER}:${PASS}@cluster0.sl5qdqg.mongodb.net/?retryWrites=true&w=majority`;
     
   const client = new MongoClient(uri);
   await client.connect();
-  // console.log(`Name is ${req.params.name}`);
 
   db = client.db("devbydevs_users");
 
-   cb();
+  cb();
 }
-// import { MongoClient,ServerApiVersion} from 'mongodb';
-// const { MongoClient,  } = require('mongodb');
 
 const DOMAIN = 'mail.devbydev.us';
 const API_MAIL = process.env.API_MAIL;
 const mg = mailgun({apiKey: API_MAIL, domain: DOMAIN});
-
-//'20741efebcdab2ac967813dac08bae35-eb38c18d-178c6950'
-
-// const uri = "mongodb+srv://devbydevs:ung84Ucl8lFLl9fh@cluster0.sl5qdqg.mongodb.net/?retryWrites=true&w=majority";
 
 app.get('/',async (req, res) => {
   res.send('devfound:');
@@ -212,8 +203,14 @@ app.get('/api/signin/:username', (req, res) => {
   res.send(`Name is ${req.params.username}`);
 });
 
-connectToDB ( () => {
-  app.listen(8000, () => {
-    console.log('Example app listening on port 8000!');
+
+// Define a serverless function
+module.exports = async (req, res) => {
+  // Connect to the MongoDB database
+  await connectToDB(() => {
+    console.log('Connected to database.');
   });
-});
+
+  // Call the Express app to handle the request
+  app(req, res);
+};
