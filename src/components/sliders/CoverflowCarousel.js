@@ -37,7 +37,7 @@ const CoverflowCarousel = () => {
       .catch(error => {
         console.error(error);
       });
-  }, []);
+  }, [data]);
 
   console.log(data);
   return (
