@@ -159,7 +159,6 @@ app.get('api/users/find/:username',async (req, res) => {
   const details = await db.collection("users").find({username: req.params.username}).toArray();
   if (details) {
      res.send(details)
-    return;
   }
   res.status(404).json(details);
 });
