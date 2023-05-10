@@ -67,7 +67,7 @@ const SignIn = () => {
       const Checkuser = await axios.get(`https://devfound-backend.vercel.app/api/users/find/${newUsername}`);
       console.log(Checkuser)
 
-      if (Checkuser.status != 404) {
+      if (Checkuser.status === 404) {
 
         document.getElementById("username_err").innerHTML = "Username Already Exist";
         
