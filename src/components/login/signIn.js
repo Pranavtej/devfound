@@ -65,6 +65,7 @@ const SignIn = () => {
       
 
       const Checkuser = await axios.get(`https://devfound-backend.vercel.app/api/users/find/${newUsername}`);
+      console.log(Checkuser)
 
       if (Checkuser.status === 404) {
 
@@ -81,8 +82,8 @@ const SignIn = () => {
               console.log(Newres.data);
               console.log("success");
               
-              redirect("/dashboard");
-              nav("/dashboard")
+              // redirect("/dashboard");
+              nav(`/dashboard/${Newres.data.username}`)
       
             } else {
               // Show an error message

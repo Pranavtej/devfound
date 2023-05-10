@@ -157,8 +157,8 @@ app.get('/users',async (req, res) => {
 
 app.get('api/users/find/:username',async (req, res) => {
   const details = await db.collection("users").find({username: req.params.username}).toArray();
-  if (details.length == 0) {
-     res.status(200).json({ error: 'User not found' });
+  if (details) {
+     res.send(details)
     return;
   }
   res.status(404).json(details);
