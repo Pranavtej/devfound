@@ -28,9 +28,9 @@ import axios from "axios";
 const CoverflowCarousel = () => {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
+  useEffect(async() => {
     // make the API request when the component mounts
-    axios.get(`https://devfound-backend.vercel.app/api/devs/`)
+    await axios.get(`https://devfound-backend.vercel.app/api/devs/`)
       .then(response => {
         setData(response.data); // save the response data to state
       })
